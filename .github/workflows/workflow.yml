@@ -39,11 +39,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: worktool-robot-sdk
-          path: build/libs
+          path: target
       - name: Get Name of Artifact
         id: get_artifact
         run: |
-          ARTIFACT_PATHNAME=$(ls build/libs/*.jar | head -n 1)
+          ARTIFACT_PATHNAME=$(ls target/*.jar | head -n 1)
           ARTIFACT_NAME=$(basename ${ARTIFACT_PATHNAME})
           echo "Artifact pathname: ${ARTIFACT_PATHNAME}"
           echo "Artifact name: ${ARTIFACT_NAME}"
