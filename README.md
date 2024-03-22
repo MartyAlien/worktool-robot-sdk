@@ -1,10 +1,13 @@
-# Worktool 机器人Java SDK
+# WorkTool Java SDK
+> 特别说明：非官方出版，纯属个人开发，欢迎MR
+
 ## 1. 简介
 [请跳转详情](https://worktool.apifox.cn/)
 
 ## 2. 快速使用
 
 ### 2.1 添加Maven坐标
+> 暂未发布至Maven中央仓库，可自行下载源码编译
 
 ```xml
 <dependency>
