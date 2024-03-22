@@ -29,6 +29,7 @@ jobs:
         with:
           name: worktool-robot-sdk
           path: target/*.jar
+          retention-days: 1
 
   github-release:
     runs-on: ubuntu-latest
