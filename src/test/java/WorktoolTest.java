@@ -172,6 +172,21 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testSendAttachmentCmd(){
+        SendAttachmentCmdRequest.Detail detail = new SendAttachmentCmdRequest.Detail(SendAttachmentCmdRequest.FileType.IMAGE
+                , "https://cdn.asrtts.cn/static/image/logo3_180_raw.png"
+                , "test.png"
+                , "小明");
+        detail.setExtraText("给你发了一个图片");
+        SendAttachmentCmdRequest sendAttachmentCmdRequest = new SendAttachmentCmdRequest(detail);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(sendAttachmentCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(sendAttachmentCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
