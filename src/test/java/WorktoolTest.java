@@ -187,6 +187,30 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testRelayMessageCmd(){
+        RelayMessageCmdRequest.Detail detail = new RelayMessageCmdRequest.Detail();
+        // 附加留言
+        detail.setExtraText("来自一条转发消息");
+        // 转发消息的接收方
+        detail.setNameList("小明");
+        // 转发前的消息内容
+        detail.setOriginalContent("1");
+        // 转发前的消息发送方
+        detail.setReceivedName("路人甲");
+        // 转发群名称
+        detail.setTitleList("美团吃货群");
+        // 消息类型
+        detail.setTextType(RelayMessageCmdRequest.TextType.TEXT);
+
+        RelayMessageCmdRequest relayMessageCmdRequest = new RelayMessageCmdRequest(detail);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(relayMessageCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(relayMessageCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
