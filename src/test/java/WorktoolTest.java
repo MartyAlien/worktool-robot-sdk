@@ -211,6 +211,18 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testPushWepanImgCmd(){
+        PushWepanImgCmdRequest.Detail detail = new PushWepanImgCmdRequest.Detail("logo2", "小明", "小李");
+        PushWepanImgCmdRequest.Detail detail2 = new PushWepanImgCmdRequest.Detail("logo2x", "小明x", "小李x");
+        PushWepanImgCmdRequest pushWepanImgCmdRequest = new PushWepanImgCmdRequest(detail,detail2);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(pushWepanImgCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(pushWepanImgCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
