@@ -258,6 +258,17 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testAddTodoCmd(){
+        AddTodoCmdRequest.Detail detail = new AddTodoCmdRequest.Detail("今天需要打卡", "小李", "小红");
+        AddTodoCmdRequest addTodoCmdRequest = new AddTodoCmdRequest(detail);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(addTodoCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(addTodoCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
