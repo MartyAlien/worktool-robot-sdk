@@ -269,6 +269,16 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testDeleteFriendCmd(){
+        DeleteFriendCmdRequest deleteFriendCmdRequest = new DeleteFriendCmdRequest("小明","小花");
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(deleteFriendCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(deleteFriendCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
