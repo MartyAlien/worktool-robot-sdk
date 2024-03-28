@@ -235,6 +235,18 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testPushWepanAttachmentCmd(){
+        PushWepanAttachmentCmdRequest.Detail detail = new PushWepanAttachmentCmdRequest.Detail("1", "小明", "小李");
+        PushWepanAttachmentCmdRequest.Detail detail2 = new PushWepanAttachmentCmdRequest.Detail("2", "小明x", "小李x");
+        PushWepanAttachmentCmdRequest pushTencentDocCmdRequest = new PushWepanAttachmentCmdRequest(detail,detail2);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(pushTencentDocCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(pushTencentDocCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
