@@ -223,6 +223,18 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testPushTencentDocCmd(){
+        PushTencentDocCmdRequest.Detail detail = new PushTencentDocCmdRequest.Detail("WorkTool用户信息收集表", "小明", "小李");
+        PushTencentDocCmdRequest.Detail detail2 = new PushTencentDocCmdRequest.Detail("WorkTool用户信息收集表2", "小明x", "小李x");
+        PushTencentDocCmdRequest pushTencentDocCmdRequest = new PushTencentDocCmdRequest(detail,detail2);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(pushTencentDocCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(pushTencentDocCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
