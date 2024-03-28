@@ -247,6 +247,17 @@ public class WorktoolTest {
         Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
     }
 
+    @Test
+    public void testModifyGroupMember(){
+        ModifyGroupMemberMarkCmdRequest.Detail detail = new ModifyGroupMemberMarkCmdRequest.Detail("Test001", "小明", "小李");
+        ModifyGroupMemberMarkCmdRequest modifyGroupMemberMarkCmdRequest = new ModifyGroupMemberMarkCmdRequest(detail);
+        log.log(Level.INFO, "request: {0}", JSON.toJSONString(modifyGroupMemberMarkCmdRequest));
+        BaseCmdWorktoolResponse response = worktoolClient.call(modifyGroupMemberMarkCmdRequest);
+        log.log(Level.INFO, "response: {0}", JSON.toJSONString(response));
+        Assert.assertNotNull(response);
+        Assert.assertEquals("接口未请求成功", Long.valueOf(200), response.getCode());
+    }
+
     @After
     public void tearDown() {
         worktoolClient = null;
