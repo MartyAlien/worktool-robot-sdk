@@ -12,7 +12,7 @@ public interface IRobtCmd extends Serializable {
     /**
      * 指令集
      */
-    long[] INSTRUCTION_ARR = {203, 206, 219, 304, 213, 220};
+    long[] INSTRUCTION_ARR = {203, 206, 219, 304, 213, 220, 207, 218, 205, 208, 211, 209, 225, 221, 234};
     /**
      * 指令类型
      * @return
