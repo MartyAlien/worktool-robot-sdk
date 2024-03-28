@@ -1,5 +1,21 @@
-# WorkTool Java SDK
-> 特别说明：非官方出版，纯属个人开发，欢迎MR
+<H1 align="center">
+    <a href="./">WorkTool Java SDK</a>
+</H1>
+
+<p align="center">
+<a href="https://github.com/MartyAlien/worktool-robot-sdk/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/MartyAlien/worktool-robot-sdk.svg?style=flat-square&include_prereleases" /></a>
+<a href="https://github.com/MartyAlien/worktool-robot-sdk/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MartyAlien/worktool-robot-sdk.svg?style=flat-square" /></a>
+<a href="https://github.com/MartyAlien/worktool-robot-sdk/actions/workflows/workflow.yml"><img alt="Build JAR File" src="https://github.com/MartyAlien/worktool-robot-sdk/actions/workflows/workflow.yml/badge.svg?style=flat-square" /></a>
+<br />
+<a href="/"><img src="https://img.shields.io/github/downloads/MartyAlien/worktool-robot-sdk/total?color=1f6feb&label=Downloads" /></a>
+<a href="/"><img src="https://img.shields.io/github/stars/MartyAlien/worktool-robot-sdk?color=#219241" /></a>
+<br />
+<a href="https://github.com/MartyAlien/worktool-robot-sdk/issues">Issues</a>
+<a href="mailto:libai.ace@gmail.com">邮箱</a>
+<br />
+<span style="font-weight: bolder;color: orange;border-bottom: 1px solid"> 特别说明：非官方出版，纯属个人开发，欢迎MR </span>
+</p>
+<hr/>
 
 ## 1. 简介
 [请跳转详情](https://worktool.apifox.cn/)
@@ -13,7 +29,7 @@
 <dependency>
     <groupId>com.github.alien.sdk.wxrobot</groupId>
     <artifactId>worktool-robot-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 ### 2.2 实例化一个机器人
